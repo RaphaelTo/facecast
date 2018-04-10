@@ -1,0 +1,15 @@
+extends layout
+block content
+
+    #main
+        section#top.one.dark.cover
+            .container
+                header
+                    h2 Connecter vous
+                    br
+                    form(action='/login/test' method="post")
+                        input(type="text", name="username" ,placeholder="Username")
+                        br
+                        input(type="password", name="password" placeholder="Password")
+                        br 
+                        input(type="submit")

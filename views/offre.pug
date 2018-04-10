@@ -1,0 +1,47 @@
+extends layout
+
+block content
+
+  #main
+    section#top.one.dark.cover
+      .container
+        header
+          ul      
+            li    
+              h2 Liste des offres
+                a(href="/add")
+                  input(type="submit",value="add")
+
+          form(method='post')        
+            table(border=1)
+              tr
+                td Nom de l'évènement
+                td Type de l'évènement
+                td Date de début
+                td Nombre de jours
+                td Rôle demandé
+                td Nombre de figurants requis
+                td Supprimer
+                td Modifier
+              
+              each offre, i in listeOffre
+                tr
+                  td
+                    = offre.nomEvent
+                  td
+                    = offre.typeEvent
+                  td
+                    = offre.dateDebut
+                  td
+                    = offre.nbJours
+                  td
+                    = offre.roleDemande
+                  td 
+                    = offre.nbFigurants
+                  td
+                    a(href="/delete/"+offre._id)
+                      input(type="button", value="delete")
+                  td
+                    a(href="/update/"+offre._id)                     
+                      input(type="button", value="update")
+            

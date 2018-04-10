@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    #main
+        section#top.one.dark.cover
+            .container
+                header
+                    h2 Modifier une offre
+                    br
+                    form(action="/add/offre", method="get")
+                        input(type="text",name="nomEvent" ,placeholder="Le nom de l'évènement")
+                        br
+                        input(type="text",name="typeEvent" ,placeholder="Le type de l'évènement")
+                        br
+                        input(type="text",name="dateDebut" ,placeholder="La date du debut")
+                        br
+                        input(type="text",name="nbJours" ,placeholder="Le nombre de jour")
+                        br
+                        input(type="text",name="roleDemande" ,placeholder="Le role demandé")
+                        br
+                        input(type="text",name="nbFigurants" ,placeholder="Nombre de figurant")
+                        br
+                        input(type="submit")

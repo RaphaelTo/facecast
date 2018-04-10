@@ -1,0 +1,36 @@
+extends layout
+
+block content
+
+    #main
+        section#top.one.dark.cover
+            .container
+                header
+                    ul
+                        li
+                            h2 Liste de candidature
+                    form(method='post')
+                        table(boder=1)
+                            tr
+                                td Figurant
+                                td Offre
+                                td Etat
+                                td Changer l'état
+                            each candidat, i in listeCandidature
+                                tr
+                                    td
+                                        = candidat.idFigurant
+                                    td
+                                        = candidat.idOffre
+                                    td
+                                        = candidat.etatCandidature
+                                    td
+                                        select(name="type", id="liste")
+                                            option(value="enAttente") En attente
+                                            option(value="accepte") Accepté
+                                            option(value="refuse") Refusé
+                                            option(value="retenu") Retenu
+                                            option(value="termine") Terminé
+                                        a(href='/'+ candidat._id, id='boutonliste')
+                                            input(type="button", value="update")
+                                        

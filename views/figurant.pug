@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+  #main
+    section#top.one.dark.cover
+      .container
+        header
+          ul      
+            li    
+              h2 Liste des figurants
+
+          form(method='post')        
+            table(border=1)
+              tr
+                td Nom du figurant
+                td Prénom du figurant
+                td Email du figurant
+              
+              each figurant, i in listeFigurant
+                tr
+                  td
+                    = figurant.nomFig
+                  td
+                    = figurant.prenomFig
+                  td
+                    = figurant.emailFig
+    
+            
